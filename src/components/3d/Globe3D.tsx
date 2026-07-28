@@ -42,7 +42,7 @@ export const Globe3D: React.FC<Globe3DProps> = ({
     // Outer Glow Halo
     const atmosphereGeo = new THREE.SphereGeometry(82, 48, 48);
     const atmosphereMat = new THREE.MeshBasicMaterial({
-      color: new THREE.Color('#0057FF'),
+      color: new THREE.Color('#DC2626'),
       transparent: true,
       opacity: 0.15,
       side: THREE.BackSide,
@@ -60,11 +60,11 @@ export const Globe3D: React.FC<Globe3DProps> = ({
     canvas.height = 512;
     const ctx = canvas.getContext('2d');
     if (ctx) {
-      ctx.fillStyle = '#071A35';
+      ctx.fillStyle = '#08080A';
       ctx.fillRect(0, 0, 1024, 512);
 
       // Grid Lines & Dots
-      ctx.strokeStyle = '#0057FF';
+      ctx.strokeStyle = '#DC2626';
       ctx.lineWidth = 1;
       ctx.globalAlpha = 0.25;
 
@@ -82,7 +82,7 @@ export const Globe3D: React.FC<Globe3DProps> = ({
       }
 
       // Bright Dots for continents simulation
-      ctx.fillStyle = '#00D2FF';
+      ctx.fillStyle = '#F43F5E';
       ctx.globalAlpha = 0.8;
       for (let i = 0; i < 2500; i++) {
         const rx = Math.random() * 1024;
@@ -98,7 +98,7 @@ export const Globe3D: React.FC<Globe3DProps> = ({
       map: texture,
       roughness: 0.4,
       metalness: 0.7,
-      emissive: new THREE.Color('#071A35'),
+      emissive: new THREE.Color('#1C0A0E'),
       emissiveIntensity: 0.6,
       transparent: true,
       opacity: 0.95
@@ -110,7 +110,7 @@ export const Globe3D: React.FC<Globe3DProps> = ({
     // Inner Glowing Core
     const coreGeo = new THREE.SphereGeometry(72, 32, 32);
     const coreMat = new THREE.MeshBasicMaterial({
-      color: new THREE.Color('#0057FF'),
+      color: new THREE.Color('#DC2626'),
       wireframe: true,
       transparent: true,
       opacity: 0.2,
@@ -122,11 +122,11 @@ export const Globe3D: React.FC<Globe3DProps> = ({
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
     scene.add(ambientLight);
 
-    const dirLight1 = new THREE.DirectionalLight(0x0057ff, 3);
+    const dirLight1 = new THREE.DirectionalLight(0xdc2626, 3);
     dirLight1.position.set(150, 150, 150);
     scene.add(dirLight1);
 
-    const dirLight2 = new THREE.DirectionalLight(0x00d2ff, 2);
+    const dirLight2 = new THREE.DirectionalLight(0xf43f5e, 2);
     dirLight2.position.set(-150, -100, -150);
     scene.add(dirLight2);
 

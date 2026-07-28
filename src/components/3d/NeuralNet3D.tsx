@@ -53,7 +53,7 @@ export const NeuralNet3D: React.FC<NeuralNet3DProps> = ({
 
     // Node Mesh Instances
     const nodeGeo = new THREE.SphereGeometry(1.8, 16, 16);
-    const nodeMat = new THREE.MeshBasicMaterial({ color: 0x00d2ff });
+    const nodeMat = new THREE.MeshBasicMaterial({ color: 0xef4444 });
 
     const nodeMeshes: THREE.Mesh[] = [];
     nodes.forEach((pos) => {
@@ -148,13 +148,13 @@ export const NeuralNet3D: React.FC<NeuralNet3DProps> = ({
             positions[lineIndex * 6 + 5] = p2.z;
 
             const alpha = 1 - dist / 42;
-            colors[lineIndex * 6] = 0.0;
-            colors[lineIndex * 6 + 1] = 0.34 * alpha;
-            colors[lineIndex * 6 + 2] = 1.0 * alpha;
+            colors[lineIndex * 6] = 0.9 * alpha;
+            colors[lineIndex * 6 + 1] = 0.1 * alpha;
+            colors[lineIndex * 6 + 2] = 0.2 * alpha;
 
-            colors[lineIndex * 6 + 3] = 0.6 * alpha;
-            colors[lineIndex * 6 + 4] = 0.0 * alpha;
-            colors[lineIndex * 6 + 5] = 1.0 * alpha;
+            colors[lineIndex * 6 + 3] = 1.0 * alpha;
+            colors[lineIndex * 6 + 4] = 0.4 * alpha;
+            colors[lineIndex * 6 + 5] = 0.2 * alpha;
 
             lineIndex++;
             connectionCount++;
@@ -187,9 +187,9 @@ export const NeuralNet3D: React.FC<NeuralNet3DProps> = ({
   }, [nodeCount]);
 
   return (
-    <div className={`relative ${height} w-full rounded-2xl bg-slate-950/60 border border-blue-900/30 overflow-hidden shadow-2xl`}>
+    <div className={`relative ${height} w-full rounded-2xl bg-slate-950/60 border border-red-900/30 overflow-hidden shadow-2xl`}>
       <div ref={containerRef} className="w-full h-full" />
-      <div className="absolute top-3 left-3 text-[11px] font-mono text-cyan-400 bg-slate-900/80 px-2.5 py-1 rounded border border-blue-500/20">
+      <div className="absolute top-3 left-3 text-[11px] font-mono text-red-400 bg-slate-900/80 px-2.5 py-1 rounded border border-red-500/20">
         NEXUS Neural Network Active Stream: 1.4 TB/s
       </div>
     </div>

@@ -32,11 +32,11 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen bg-[#071A35] text-slate-100 selection:bg-cyan-400 selection:text-slate-950 transition-colors duration-300 font-sans relative overflow-x-hidden`}>
+    <div className={`min-h-screen bg-[#08080a] text-slate-100 selection:bg-red-600 selection:text-white transition-colors duration-300 font-sans relative overflow-x-hidden`}>
       {/* Background Ambient Orbs */}
-      <div className="orb orb-blue top-[-100px] right-[-100px] fixed" />
-      <div className="orb orb-purple bottom-[10%] left-[-100px] fixed" />
-      <div className="orb orb-blue top-[40%] right-[-150px] fixed opacity-50" />
+      <div className="orb orb-red top-[-100px] right-[-100px] fixed" />
+      <div className="orb orb-crimson bottom-[10%] left-[-100px] fixed" />
+      <div className="orb orb-red top-[40%] right-[-150px] fixed opacity-40" />
 
       {/* Top Floating Glass Navigation */}
       <Navbar

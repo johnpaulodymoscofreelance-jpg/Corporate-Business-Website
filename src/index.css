@@ -4,7 +4,7 @@
 @layer base {
   body {
     font-family: 'Inter', sans-serif;
-    background-color: #071A35;
+    background-color: #08080a;
     color: #f8fafc;
   }
 }
@@ -13,8 +13,8 @@
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
 }
 
 .glass-panel-hover {
@@ -22,36 +22,42 @@
 }
 .glass-panel-hover:hover {
   background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(0, 87, 255, 0.4);
-  box-shadow: 0 12px 40px 0 rgba(0, 87, 255, 0.25);
+  border-color: rgba(225, 29, 72, 0.5);
+  box-shadow: 0 12px 40px 0 rgba(225, 29, 72, 0.25);
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #ffffff, #0057FF 60%, #00FFFF);
+  background: linear-gradient(90deg, #ffffff, #f43f5e 50%, #e11d48);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.glow-cyan {
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.25);
+.glow-red {
+  box-shadow: 0 0 25px rgba(225, 29, 72, 0.35);
 }
 
-.glow-blue {
-  box-shadow: 0 0 30px rgba(0, 87, 255, 0.35);
+.glow-rose {
+  box-shadow: 0 0 35px rgba(244, 63, 94, 0.3);
 }
 
 .orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
+  filter: blur(90px);
   z-index: 0;
   pointer-events: none;
 }
 
-.orb-blue {
-  width: 500px;
-  height: 500px;
-  background: rgba(0, 87, 255, 0.18);
+.orb-red {
+  width: 550px;
+  height: 550px;
+  background: rgba(225, 29, 72, 0.16);
+}
+
+.orb-crimson {
+  width: 450px;
+  height: 450px;
+  background: rgba(159, 18, 57, 0.2);
 }
 
 /* Custom scrollbar hiding and marquee animations */

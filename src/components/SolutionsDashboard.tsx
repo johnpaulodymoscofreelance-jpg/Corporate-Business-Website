@@ -48,14 +48,14 @@ export const SolutionsDashboard: React.FC = () => {
   };
 
   return (
-    <section id="solutions" className="py-24 bg-[#071A35] relative overflow-hidden">
+    <section id="solutions" className="py-24 bg-[#08080a] relative overflow-hidden">
       {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#0057FF]/10 blur-[180px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-red-600/10 blur-[180px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
-          <div className="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-400/20 px-3.5 py-1.5 rounded-full text-xs text-cyan-400 font-semibold uppercase tracking-wider">
+          <div className="inline-flex items-center space-x-2 bg-red-500/10 border border-red-500/20 px-3.5 py-1.5 rounded-full text-xs text-red-400 font-semibold uppercase tracking-wider">
             <Zap className="w-3.5 h-3.5" />
             <span>Interactive Platform Simulation</span>
           </div>
@@ -72,7 +72,7 @@ export const SolutionsDashboard: React.FC = () => {
         {/* Dashboard Shell Frame */}
         <div className="glass-panel rounded-3xl overflow-hidden shadow-2xl">
           {/* Top Bar Window Controls */}
-          <div className="bg-[#071A35]/80 px-6 py-4 border-b border-white/10 flex flex-wrap items-center justify-between gap-4">
+          <div className="bg-[#08080a]/80 px-6 py-4 border-b border-white/10 flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center space-x-3">
               <div className="flex space-x-1.5">
                 <span className="w-3 h-3 rounded-full bg-rose-500/80" />
@@ -90,7 +90,7 @@ export const SolutionsDashboard: React.FC = () => {
                 onClick={() => setActiveTab('analytics')}
                 className={`px-4 py-1.5 rounded-full text-xs font-semibold flex items-center space-x-1.5 transition-all ${
                   activeTab === 'analytics'
-                    ? 'bg-[#0057FF] text-white shadow-md'
+                    ? 'bg-red-600 text-white shadow-md'
                     : 'text-slate-400 hover:text-white'
                 }`}
               >
@@ -102,7 +102,7 @@ export const SolutionsDashboard: React.FC = () => {
                 onClick={() => setActiveTab('workflow')}
                 className={`px-4 py-1.5 rounded-full text-xs font-semibold flex items-center space-x-1.5 transition-all ${
                   activeTab === 'workflow'
-                    ? 'bg-[#0057FF] text-white shadow-md'
+                    ? 'bg-red-600 text-white shadow-md'
                     : 'text-slate-400 hover:text-white'
                 }`}
               >
@@ -114,7 +114,7 @@ export const SolutionsDashboard: React.FC = () => {
                 onClick={() => setActiveTab('logs')}
                 className={`px-4 py-1.5 rounded-full text-xs font-semibold flex items-center space-x-1.5 transition-all ${
                   activeTab === 'logs'
-                    ? 'bg-[#0057FF] text-white shadow-md'
+                    ? 'bg-red-600 text-white shadow-md'
                     : 'text-slate-400 hover:text-white'
                 }`}
               >
@@ -131,17 +131,17 @@ export const SolutionsDashboard: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div className="bg-slate-950 p-4 rounded-2xl border border-slate-800">
                     <span className="text-xs text-slate-400 block mb-1">Global System Efficiency</span>
-                    <span className="text-2xl font-black text-cyan-400 font-mono">98.4%</span>
+                    <span className="text-2xl font-black text-rose-400 font-mono">98.4%</span>
                     <span className="text-[10px] text-emerald-400 block mt-1">+2.1% from baseline</span>
                   </div>
                   <div className="bg-slate-950 p-4 rounded-2xl border border-slate-800">
                     <span className="text-xs text-slate-400 block mb-1">Throughput Rate</span>
-                    <span className="text-2xl font-black text-blue-400 font-mono">9,400 req/sec</span>
-                    <span className="text-[10px] text-blue-400 block mt-1">Sub-10ms processing</span>
+                    <span className="text-2xl font-black text-red-500 font-mono">9,400 req/sec</span>
+                    <span className="text-[10px] text-red-400 block mt-1">Sub-10ms processing</span>
                   </div>
                   <div className="bg-slate-950 p-4 rounded-2xl border border-slate-800">
                     <span className="text-xs text-slate-400 block mb-1">Security Intercepts</span>
-                    <span className="text-2xl font-black text-purple-400 font-mono">0 Incidents</span>
+                    <span className="text-2xl font-black text-amber-500 font-mono">0 Incidents</span>
                     <span className="text-[10px] text-emerald-400 block mt-1">Zero-Trust Active</span>
                   </div>
                 </div>
@@ -150,21 +150,21 @@ export const SolutionsDashboard: React.FC = () => {
                 <div className="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-2">
                   <div className="flex items-center justify-between text-xs text-slate-400 font-mono mb-4">
                     <span>LIVE 24-HOUR THROUGHPUT & EFFICIENCY CURVE:</span>
-                    <span className="text-cyan-400">P99 Latency: 8.4ms</span>
+                    <span className="text-red-400">P99 Latency: 8.4ms</span>
                   </div>
                   <div className="h-64 w-full">
                     <ResponsiveContainer width="100%" height="100%">
                       <AreaChart data={chartData}>
                         <defs>
                           <linearGradient id="colorThroughput" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%" stopColor="#0057FF" stopOpacity={0.6}/>
-                            <stop offset="95%" stopColor="#0057FF" stopOpacity={0}/>
+                            <stop offset="5%" stopColor="#e11d48" stopOpacity={0.6}/>
+                            <stop offset="95%" stopColor="#e11d48" stopOpacity={0}/>
                           </linearGradient>
                         </defs>
                         <XAxis dataKey="time" stroke="#64748b" fontSize={11} />
                         <YAxis stroke="#64748b" fontSize={11} />
-                        <Tooltip contentStyle={{ backgroundColor: '#071A35', borderColor: '#0057FF', borderRadius: '8px', fontSize: '12px' }} />
-                        <Area type="monotone" dataKey="throughput" stroke="#00D2FF" strokeWidth={2} fillOpacity={1} fill="url(#colorThroughput)" />
+                        <Tooltip contentStyle={{ backgroundColor: '#08080a', borderColor: '#e11d48', borderRadius: '8px', fontSize: '12px' }} />
+                        <Area type="monotone" dataKey="throughput" stroke="#f43f5e" strokeWidth={2} fillOpacity={1} fill="url(#colorThroughput)" />
                       </AreaChart>
                     </ResponsiveContainer>
                   </div>
@@ -185,7 +185,7 @@ export const SolutionsDashboard: React.FC = () => {
                     </div>
                     <div className="text-right font-mono text-xs">
                       <span className="text-slate-400 block text-[10px]">Current Load</span>
-                      <span className="text-cyan-400 font-bold text-sm">{node.load}</span>
+                      <span className="text-red-400 font-bold text-sm">{node.load}</span>
                     </div>
                   </div>
                 ))}
@@ -196,13 +196,13 @@ export const SolutionsDashboard: React.FC = () => {
               <div className="bg-slate-950 p-6 rounded-2xl border border-slate-800 font-mono text-xs text-slate-300 space-y-3">
                 <div className="flex items-center justify-between border-b border-slate-800 pb-2 text-slate-500">
                   <span>AUDIT TELEMETRY STREAM</span>
-                  <button onClick={refreshLogs} className="text-cyan-400 hover:underline flex items-center space-x-1 text-[11px]">
+                  <button onClick={refreshLogs} className="text-red-400 hover:underline flex items-center space-x-1 text-[11px]">
                     <RefreshCw className="w-3 h-3" />
                     <span>Trigger Refresh</span>
                   </button>
                 </div>
                 {logs.map((log, idx) => (
-                  <div key={idx} className="text-cyan-300 border-l-2 border-cyan-500 pl-3 py-1 bg-blue-950/20 rounded-r">
+                  <div key={idx} className="text-rose-300 border-l-2 border-red-500 pl-3 py-1 bg-red-950/20 rounded-r">
                     {log}
                   </div>
                 ))}

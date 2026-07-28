@@ -41,15 +41,15 @@ export const Services: React.FC<ServicesProps> = ({ onOpenRoi, onOpenDemo }) => 
   };
 
   return (
-    <section id="services" className="py-24 bg-[#071A35] relative overflow-hidden">
+    <section id="services" className="py-24 bg-[#08080a] relative overflow-hidden">
       {/* Ambient background glow */}
-      <div className="absolute top-1/3 right-0 w-[600px] h-[600px] bg-[#0057FF]/10 blur-[160px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/3 right-0 w-[600px] h-[600px] bg-red-600/10 blur-[160px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl space-y-4">
-            <div className="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-400/20 px-3.5 py-1.5 rounded-full text-xs text-cyan-400 font-semibold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-red-500/10 border border-red-500/20 px-3.5 py-1.5 rounded-full text-xs text-red-400 font-semibold uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Core Enterprise Capabilities</span>
             </div>
@@ -69,13 +69,13 @@ export const Services: React.FC<ServicesProps> = ({ onOpenRoi, onOpenDemo }) => 
           <div className="flex items-center space-x-3">
             <button
               onClick={onOpenRoi}
-              className="px-6 py-3 rounded-full glass-panel hover:bg-white/10 text-cyan-400 text-xs font-bold transition-all"
+              className="px-6 py-3 rounded-full glass-panel hover:bg-white/10 text-rose-300 text-xs font-bold transition-all"
             >
               Calculate Service ROI
             </button>
             <button
               onClick={onOpenDemo}
-              className="px-6 py-3 rounded-full bg-[#0057FF] hover:bg-blue-500 text-white text-xs font-bold transition-all shadow-lg shadow-blue-600/30"
+              className="px-6 py-3 rounded-full bg-red-600 hover:bg-red-500 text-white text-xs font-bold transition-all shadow-lg shadow-red-600/30"
             >
               Consult an Architect
             </button>
@@ -92,11 +92,11 @@ export const Services: React.FC<ServicesProps> = ({ onOpenRoi, onOpenDemo }) => 
             >
               {/* Card Top */}
               <div>
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0057FF] to-[#00FFFF] flex items-center justify-center text-white mb-5 group-hover:scale-110 transition-all shadow-md">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-red-600 via-rose-600 to-amber-600 flex items-center justify-center text-white mb-5 group-hover:scale-110 transition-all shadow-md">
                   {getIcon(service.iconName)}
                 </div>
 
-                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-red-400 transition-colors">
                   {service.title}
                 </h3>
 
@@ -113,7 +113,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenRoi, onOpenDemo }) => 
                     <span className="text-sm font-bold text-emerald-400 font-mono">{service.metrics[0].value}</span>
                   </div>
 
-                  <span className="w-8 h-8 rounded-full bg-white/10 group-hover:bg-[#0057FF] flex items-center justify-center text-slate-300 group-hover:text-white transition-all">
+                  <span className="w-8 h-8 rounded-full bg-white/10 group-hover:bg-red-600 flex items-center justify-center text-slate-300 group-hover:text-white transition-all">
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                   </span>
                 </div>

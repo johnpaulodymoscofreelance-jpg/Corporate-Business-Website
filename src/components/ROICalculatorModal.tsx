@@ -56,7 +56,7 @@ export const ROICalculatorModal: React.FC<ROICalculatorModalProps> = ({ isOpen, 
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="bg-slate-900 border border-blue-500/40 rounded-3xl max-w-2xl w-full p-6 sm:p-8 relative text-white shadow-2xl space-y-6">
+      <div className="bg-slate-900 border border-red-500/40 rounded-3xl max-w-2xl w-full p-6 sm:p-8 relative text-white shadow-2xl space-y-6">
         <button
           onClick={onClose}
           className="absolute top-5 right-5 p-2 rounded-xl bg-slate-800 text-slate-400 hover:text-white transition-colors"
@@ -65,36 +65,36 @@ export const ROICalculatorModal: React.FC<ROICalculatorModalProps> = ({ isOpen, 
         </button>
 
         <div className="flex items-center space-x-3">
-          <div className="w-12 h-12 rounded-2xl bg-blue-600/20 border border-blue-500/40 flex items-center justify-center text-cyan-400">
+          <div className="w-12 h-12 rounded-2xl bg-red-600/20 border border-red-500/40 flex items-center justify-center text-red-400">
             <Calculator className="w-6 h-6" />
           </div>
           <div>
             <h3 className="text-xl font-bold">NEXUS Corporate ROI Calculator</h3>
-            <p className="text-xs text-cyan-400 font-mono">Powered by AI Financial Benchmark Engines</p>
+            <p className="text-xs text-rose-400 font-mono">Powered by AI Financial Benchmark Engines</p>
           </div>
         </div>
 
         {roiResult ? (
           <div className="space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="bg-slate-950 p-4 rounded-2xl border border-blue-500/30 text-center">
+              <div className="bg-slate-950 p-4 rounded-2xl border border-red-500/30 text-center">
                 <span className="text-[10px] text-slate-400 font-mono uppercase block">Annual Cost Reduction</span>
                 <span className="text-xl font-bold text-emerald-400 font-mono">{roiResult.annualCostReduction}</span>
               </div>
 
-              <div className="bg-slate-950 p-4 rounded-2xl border border-blue-500/30 text-center">
+              <div className="bg-slate-950 p-4 rounded-2xl border border-red-500/30 text-center">
                 <span className="text-[10px] text-slate-400 font-mono uppercase block">Throughput Multiplier</span>
-                <span className="text-xl font-bold text-cyan-400 font-mono">{roiResult.throughputMultiplier}</span>
+                <span className="text-xl font-bold text-red-400 font-mono">{roiResult.throughputMultiplier}</span>
               </div>
 
-              <div className="bg-slate-950 p-4 rounded-2xl border border-blue-500/30 text-center">
+              <div className="bg-slate-950 p-4 rounded-2xl border border-red-500/30 text-center">
                 <span className="text-[10px] text-slate-400 font-mono uppercase block">Payback Period</span>
-                <span className="text-xl font-bold text-purple-400 font-mono">{roiResult.paybackPeriodMonths}</span>
+                <span className="text-xl font-bold text-amber-400 font-mono">{roiResult.paybackPeriodMonths}</span>
               </div>
             </div>
 
             <div className="bg-slate-950 p-5 rounded-2xl border border-slate-800 space-y-2">
-              <h4 className="text-xs font-bold text-cyan-300 uppercase tracking-wider">Executive ROI Summary:</h4>
+              <h4 className="text-xs font-bold text-rose-300 uppercase tracking-wider">Executive ROI Summary:</h4>
               <p className="text-xs text-slate-300 leading-relaxed">{roiResult.summary}</p>
             </div>
 
@@ -107,7 +107,7 @@ export const ROICalculatorModal: React.FC<ROICalculatorModalProps> = ({ isOpen, 
               </button>
               <button
                 onClick={() => { onClose(); onOpenDemo(); }}
-                className="px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-lg"
+                className="px-6 py-2.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs shadow-lg"
               >
                 Schedule Executive Demo
               </button>
@@ -121,7 +121,7 @@ export const ROICalculatorModal: React.FC<ROICalculatorModalProps> = ({ isOpen, 
                 <select
                   value={industry}
                   onChange={(e) => setIndustry(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white focus:outline-none focus:border-blue-500"
+                  className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white focus:outline-none focus:border-red-500"
                 >
                   <option>Banking & Capital Markets</option>
                   <option>Healthcare & Life Sciences</option>
@@ -137,7 +137,7 @@ export const ROICalculatorModal: React.FC<ROICalculatorModalProps> = ({ isOpen, 
                 <select
                   value={companySize}
                   onChange={(e) => setCompanySize(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white focus:outline-none focus:border-blue-500"
+                  className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white focus:outline-none focus:border-red-500"
                 >
                   <option>500 - 1,000 Employees</option>
                   <option>1,000 - 5,000 Employees</option>
@@ -154,7 +154,7 @@ export const ROICalculatorModal: React.FC<ROICalculatorModalProps> = ({ isOpen, 
                 required
                 value={cloudSpend}
                 onChange={(e) => setCloudSpend(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white focus:outline-none focus:border-blue-500"
+                className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white focus:outline-none focus:border-red-500"
               />
             </div>
 
@@ -165,14 +165,14 @@ export const ROICalculatorModal: React.FC<ROICalculatorModalProps> = ({ isOpen, 
                 required
                 value={goal}
                 onChange={(e) => setGoal(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white focus:outline-none focus:border-blue-500"
+                className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white focus:outline-none focus:border-red-500"
               />
             </div>
 
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-xs shadow-xl shadow-blue-600/30 flex items-center justify-center space-x-2"
+              className="w-full py-4 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-amber-600 hover:from-red-500 hover:to-amber-500 text-white font-bold text-xs shadow-xl shadow-red-600/30 flex items-center justify-center space-x-2"
             >
               <Sparkles className="w-4 h-4" />
               <span>{isLoading ? 'Calculating Enterprise Metrics...' : 'Calculate AI Projected ROI'}</span>

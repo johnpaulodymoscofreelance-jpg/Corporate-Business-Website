@@ -40,13 +40,13 @@ export const Building3D: React.FC<Building3DProps> = ({
     scene.add(mainGroup);
 
     // Ground Grid & Base Ring
-    const gridHelper = new THREE.GridHelper(200, 30, 0x0057ff, 0x071a35);
+    const gridHelper = new THREE.GridHelper(200, 30, 0xdc2626, 0x1c0a0e);
     gridHelper.position.y = -20;
     mainGroup.add(gridHelper);
 
     // Skyscraper Glass Materials
     const glassMat = new THREE.MeshPhysicalMaterial({
-      color: new THREE.Color('#071A35'),
+      color: new THREE.Color('#1C0A0E'),
       metalness: 0.9,
       roughness: 0.1,
       transmission: 0.6,
@@ -58,14 +58,14 @@ export const Building3D: React.FC<Building3DProps> = ({
     });
 
     const windowGlowMat = new THREE.MeshBasicMaterial({
-      color: new THREE.Color('#00D2FF'),
+      color: new THREE.Color('#F43F5E'),
       wireframe: true,
       transparent: true,
       opacity: 0.35
     });
 
     const metallicFrameMat = new THREE.MeshStandardMaterial({
-      color: new THREE.Color('#0057FF'),
+      color: new THREE.Color('#DC2626'),
       metalness: 0.9,
       roughness: 0.2
     });
@@ -117,7 +117,7 @@ export const Building3D: React.FC<Building3DProps> = ({
     // Volumetric Light Shaft Beam
     const beamGeo = new THREE.CylinderGeometry(2, 30, 180, 32, 1, true);
     const beamMat = new THREE.MeshBasicMaterial({
-      color: new THREE.Color('#0057FF'),
+      color: new THREE.Color('#DC2626'),
       transparent: true,
       opacity: 0.12,
       side: THREE.DoubleSide
@@ -131,7 +131,7 @@ export const Building3D: React.FC<Building3DProps> = ({
     mainGroup.add(droneGroup);
 
     const droneGeom = new THREE.SphereGeometry(1.2, 12, 12);
-    const droneMat = new THREE.MeshBasicMaterial({ color: 0x00e676 });
+    const droneMat = new THREE.MeshBasicMaterial({ color: 0x34d399 });
 
     const drones: { mesh: THREE.Mesh; angle: number; radius: number; speed: number; y: number }[] = [];
     for (let i = 0; i < 8; i++) {
@@ -150,13 +150,13 @@ export const Building3D: React.FC<Building3DProps> = ({
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
     scene.add(ambientLight);
 
-    const pointLight = new THREE.PointLight(0x00d2ff, 3, 200);
+    const pointLight = new THREE.PointLight(0xf43f5e, 3, 200);
     pointLight.position.set(60, 90, 60);
     scene.add(pointLight);
 
-    const purpleLight = new THREE.PointLight(0x9d00ff, 2, 200);
-    purpleLight.position.set(-60, 20, -60);
-    scene.add(purpleLight);
+    const redLight = new THREE.PointLight(0xdc2626, 2, 200);
+    redLight.position.set(-60, 20, -60);
+    scene.add(redLight);
 
     // Mouse Interaction
     let mouseX = 0;
@@ -222,17 +222,17 @@ export const Building3D: React.FC<Building3DProps> = ({
   }, []);
 
   return (
-    <div className={`relative ${height} w-full rounded-2xl bg-slate-950/40 backdrop-blur-xl border border-blue-900/30 shadow-2xl overflow-hidden`}>
+    <div className={`relative ${height} w-full rounded-2xl bg-slate-950/40 backdrop-blur-xl border border-red-900/30 shadow-2xl overflow-hidden`}>
       <div ref={containerRef} className="w-full h-full cursor-crosshair" />
 
       {/* Floating Header */}
-      <div className="absolute top-4 left-4 z-10 flex items-center space-x-2 bg-slate-900/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-blue-500/20 text-xs text-blue-200">
-        <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+      <div className="absolute top-4 left-4 z-10 flex items-center space-x-2 bg-slate-900/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-red-500/20 text-xs text-rose-200">
+        <span className="w-2 h-2 rounded-full bg-red-400 animate-pulse" />
         <span>NEXUS Global HQ 3D Architectural Twin</span>
       </div>
 
       {/* Sector Inspector Overlay */}
-      <div className="absolute bottom-4 left-4 right-4 z-10 grid grid-cols-2 sm:grid-cols-4 gap-2 bg-slate-900/90 backdrop-blur-xl p-2 rounded-xl border border-blue-500/30">
+      <div className="absolute bottom-4 left-4 right-4 z-10 grid grid-cols-2 sm:grid-cols-4 gap-2 bg-slate-900/90 backdrop-blur-xl p-2 rounded-xl border border-red-500/30">
         {sectors.map((sec) => {
           const isSelected = activeSector === sec.name;
           return (
@@ -241,11 +241,11 @@ export const Building3D: React.FC<Building3DProps> = ({
               onClick={() => setActiveSector(sec.name)}
               className={`p-2 rounded-lg text-left transition-all ${
                 isSelected
-                  ? 'bg-blue-600/30 border border-blue-400 text-white shadow-lg'
+                  ? 'bg-red-600/30 border border-red-400 text-white shadow-lg'
                   : 'bg-slate-800/40 border border-slate-700/50 text-slate-300 hover:bg-slate-800/80'
               }`}
             >
-              <div className="text-[10px] font-semibold text-cyan-400 uppercase tracking-wider">{sec.floor}</div>
+              <div className="text-[10px] font-semibold text-red-400 uppercase tracking-wider">{sec.floor}</div>
               <div className="text-xs font-bold truncate text-white">{sec.name}</div>
               <div className="text-[10px] text-slate-400 truncate">{sec.metric}</div>
             </button>

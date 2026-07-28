@@ -44,16 +44,16 @@ export const GlobalPresence: React.FC = () => {
     : GLOBAL_OFFICES.filter(o => o.region === activeRegion);
 
   return (
-    <section id="global-presence" className="py-24 bg-slate-900/60 relative border-t border-slate-900">
+    <section id="global-presence" className="py-24 bg-[#08080a] relative border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center space-x-2 bg-blue-950/80 border border-blue-500/30 px-3.5 py-1.5 rounded-full text-xs text-cyan-400 font-semibold uppercase tracking-wider">
+          <div className="inline-flex items-center space-x-2 bg-red-500/10 border border-red-500/20 px-3.5 py-1.5 rounded-full text-xs text-red-400 font-semibold uppercase tracking-wider">
             <Globe className="w-3.5 h-3.5" />
             <span>Worldwide Infrastructure</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-            Global Office Network & <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Sovereign Data Hubs</span>
+            Global Office Network & <span className="gradient-text">Sovereign Data Hubs</span>
           </h2>
 
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
@@ -69,7 +69,7 @@ export const GlobalPresence: React.FC = () => {
               onClick={() => setActiveRegion(reg)}
               className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all border ${
                 activeRegion === reg
-                  ? 'bg-blue-600 border-blue-400 text-white shadow-lg'
+                  ? 'bg-red-600 border-red-400 text-white shadow-lg'
                   : 'bg-slate-950 border-slate-800 text-slate-400 hover:text-white'
               }`}
             >
@@ -93,7 +93,7 @@ export const GlobalPresence: React.FC = () => {
           {/* Right: Selected Office Details Card & List */}
           <div className="lg:col-span-5 space-y-4">
             {/* Spotlight Office Card */}
-            <div className="bg-slate-950/90 border border-blue-500/40 rounded-3xl p-6 backdrop-blur-xl shadow-2xl space-y-4">
+            <div className="bg-slate-950/90 border border-red-500/40 rounded-3xl p-6 backdrop-blur-xl shadow-2xl space-y-4">
               <div className="flex items-center justify-between border-b border-slate-800 pb-3">
                 <div>
                   <h3 className="text-2xl font-bold text-white flex items-center space-x-2">
@@ -108,8 +108,8 @@ export const GlobalPresence: React.FC = () => {
                 </div>
 
                 <div className="text-right">
-                  <div className="text-xs font-mono text-cyan-400 font-bold flex items-center space-x-1 justify-end">
-                    <Clock className="w-3.5 h-3.5 text-cyan-400" />
+                  <div className="text-xs font-mono text-red-400 font-bold flex items-center space-x-1 justify-end">
+                    <Clock className="w-3.5 h-3.5 text-red-400" />
                     <span>{currentTime || '12:00 PM'}</span>
                   </div>
                   <span className="text-[10px] text-slate-500 font-mono block">Local Office Time</span>
@@ -123,17 +123,17 @@ export const GlobalPresence: React.FC = () => {
                 </div>
                 <div className="bg-slate-900 p-3 rounded-xl border border-slate-800">
                   <span className="text-slate-400 text-[10px] block">Node Latency Ping</span>
-                  <span className="text-sm font-bold text-cyan-400 font-mono">{selectedOffice.latencyMs} ms</span>
+                  <span className="text-sm font-bold text-red-400 font-mono">{selectedOffice.latencyMs} ms</span>
                 </div>
               </div>
 
               <div className="space-y-2 text-xs text-slate-300 pt-2 border-t border-slate-800">
                 <div className="flex items-start space-x-2">
-                  <MapPin className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                  <MapPin className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
                   <span>{selectedOffice.address}</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Phone className="w-4 h-4 text-cyan-400 shrink-0" />
+                  <Phone className="w-4 h-4 text-red-400 shrink-0" />
                   <span className="font-mono">{selectedOffice.phone}</span>
                 </div>
               </div>
@@ -149,13 +149,13 @@ export const GlobalPresence: React.FC = () => {
                     onClick={() => setSelectedOffice(office)}
                     className={`p-3 rounded-xl text-left border transition-all text-xs ${
                       isSelected
-                        ? 'bg-blue-600/30 border-blue-400 text-white font-bold'
+                        ? 'bg-red-600/30 border-red-400 text-white font-bold'
                         : 'bg-slate-950/60 border-slate-800 text-slate-400 hover:text-slate-200'
                     }`}
                   >
                     <div className="flex items-center justify-between">
                       <span>{office.city}</span>
-                      <span className="text-[10px] font-mono text-cyan-400">{office.latencyMs}ms</span>
+                      <span className="text-[10px] font-mono text-red-400">{office.latencyMs}ms</span>
                     </div>
                   </button>
                 );

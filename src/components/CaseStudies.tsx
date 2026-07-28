@@ -21,16 +21,16 @@ export const CaseStudies: React.FC = () => {
     : CASE_STUDIES.filter(c => c.industry === activeFilter);
 
   return (
-    <section id="case-studies" className="py-24 bg-slate-950 relative overflow-hidden">
+    <section id="case-studies" className="py-24 bg-[#08080a] relative overflow-hidden border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
-          <div className="inline-flex items-center space-x-2 bg-blue-950/80 border border-blue-500/30 px-3.5 py-1.5 rounded-full text-xs text-cyan-400 font-semibold uppercase tracking-wider">
+          <div className="inline-flex items-center space-x-2 bg-red-500/10 border border-red-500/20 px-3.5 py-1.5 rounded-full text-xs text-red-400 font-semibold uppercase tracking-wider">
             <Briefcase className="w-3.5 h-3.5" />
             <span>Proven Enterprise Impact</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-            Case Studies in <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Transformation</span>
+            Case Studies in <span className="gradient-text">Transformation</span>
           </h2>
 
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
@@ -46,7 +46,7 @@ export const CaseStudies: React.FC = () => {
               onClick={() => setActiveFilter(cat)}
               className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border ${
                 activeFilter === cat
-                  ? 'bg-blue-600 border-blue-400 text-white shadow-lg'
+                  ? 'bg-red-600 border-red-400 text-white shadow-lg'
                   : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white'
               }`}
             >
@@ -61,11 +61,11 @@ export const CaseStudies: React.FC = () => {
             <div
               key={cs.id}
               onClick={() => setSelectedCase(cs)}
-              className="bg-slate-900/80 border border-blue-900/40 rounded-3xl p-6 sm:p-8 backdrop-blur-xl hover:border-blue-500/60 transition-all cursor-pointer group flex flex-col justify-between shadow-2xl hover:-translate-y-1"
+              className="bg-slate-900/80 border border-red-900/40 rounded-3xl p-6 sm:p-8 backdrop-blur-xl hover:border-red-500/60 transition-all cursor-pointer group flex flex-col justify-between shadow-2xl hover:-translate-y-1"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-[10px] font-mono tracking-wider uppercase px-3 py-1 rounded-full bg-blue-950 text-cyan-300 border border-blue-800/50">
+                  <span className="text-[10px] font-mono tracking-wider uppercase px-3 py-1 rounded-full bg-red-950 text-rose-300 border border-red-800/50">
                     {cs.industry}
                   </span>
                   <span className="text-xs font-bold text-slate-400 group-hover:text-white transition-colors">
@@ -73,7 +73,7 @@ export const CaseStudies: React.FC = () => {
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-rose-300 transition-colors">
                   {cs.title}
                 </h3>
 
@@ -91,15 +91,15 @@ export const CaseStudies: React.FC = () => {
                   </div>
                   <div className="bg-slate-950 p-2.5 rounded-xl border border-slate-800">
                     <span className="text-[9px] text-slate-400 block uppercase">Cost Impact</span>
-                    <span className="text-xs sm:text-sm font-bold text-cyan-400 font-mono">{cs.results.costReduction}</span>
+                    <span className="text-xs sm:text-sm font-bold text-red-400 font-mono">{cs.results.costReduction}</span>
                   </div>
                   <div className="bg-slate-950 p-2.5 rounded-xl border border-slate-800">
                     <span className="text-[9px] text-slate-400 block uppercase">Velocity</span>
-                    <span className="text-xs sm:text-sm font-bold text-purple-400 font-mono">{cs.results.deploymentSpeed}</span>
+                    <span className="text-xs sm:text-sm font-bold text-amber-400 font-mono">{cs.results.deploymentSpeed}</span>
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between text-xs text-cyan-400 font-semibold group-hover:underline">
+                <div className="flex items-center justify-between text-xs text-red-400 font-semibold group-hover:underline">
                   <span>View Complete Architecture & Impact Analysis</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -112,7 +112,7 @@ export const CaseStudies: React.FC = () => {
       {/* Case Study Detail Modal */}
       {selectedCase && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md animate-in fade-in duration-200">
-          <div className="bg-slate-900 border border-blue-500/40 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative text-white shadow-2xl space-y-6">
+          <div className="bg-slate-900 border border-red-500/40 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative text-white shadow-2xl space-y-6">
             <button
               onClick={() => setSelectedCase(null)}
               className="absolute top-5 right-5 p-2 rounded-xl bg-slate-800 text-slate-400 hover:text-white transition-colors"
@@ -121,7 +121,7 @@ export const CaseStudies: React.FC = () => {
             </button>
 
             <div className="space-y-2">
-              <span className="text-xs font-mono text-cyan-400 uppercase tracking-wider">{selectedCase.client} • {selectedCase.industry}</span>
+              <span className="text-xs font-mono text-red-400 uppercase tracking-wider">{selectedCase.client} • {selectedCase.industry}</span>
               <h3 className="text-2xl font-bold">{selectedCase.title}</h3>
             </div>
 
@@ -138,8 +138,8 @@ export const CaseStudies: React.FC = () => {
             </div>
 
             {/* Before vs After Comparison */}
-            <div className="bg-gradient-to-r from-blue-950 to-indigo-950 p-6 rounded-2xl border border-blue-500/30 space-y-3">
-              <h4 className="text-xs font-bold text-cyan-300 uppercase tracking-wider">Before & After Performance Metrics:</h4>
+            <div className="bg-gradient-to-r from-red-950 to-slate-950 p-6 rounded-2xl border border-red-500/30 space-y-3">
+              <h4 className="text-xs font-bold text-rose-300 uppercase tracking-wider">Before & After Performance Metrics:</h4>
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-slate-950/80 p-4 rounded-xl border border-rose-500/30">
                   <span className="text-[10px] text-rose-400 block font-mono uppercase">{selectedCase.beforeAfter.beforeLabel}</span>
@@ -155,7 +155,7 @@ export const CaseStudies: React.FC = () => {
             <div className="flex justify-end pt-4 border-t border-slate-800">
               <button
                 onClick={() => setSelectedCase(null)}
-                className="px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs"
+                className="px-6 py-2.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs"
               >
                 Close Case Study
               </button>

@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#071A35] text-slate-400 text-xs border-t border-white/10 pt-16 pb-12 relative overflow-hidden">
+    <footer className="bg-[#08080a] text-slate-400 text-xs border-t border-white/10 pt-16 pb-12 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
         {/* Top Newsletter & System Status Row */}
@@ -51,14 +51,14 @@ export const Footer: React.FC = () => {
                   placeholder="exec@company.com"
                   value={newsletterEmail}
                   onChange={(e) => setNewsletterEmail(e.target.value)}
-                  className="px-5 py-3 rounded-full glass-panel text-xs text-white focus:outline-none focus:border-blue-500 grow"
+                  className="px-5 py-3 rounded-full glass-panel text-xs text-white focus:outline-none focus:border-red-500 grow"
                 />
                 <button
                   type="submit"
-                  className="px-6 py-3 rounded-full bg-[#0057FF] hover:bg-blue-500 text-white font-bold text-xs shrink-0 flex items-center space-x-1 shadow-lg shadow-blue-600/30"
+                  className="px-6 py-3 rounded-full bg-red-600 hover:bg-red-500 text-white font-bold text-xs shrink-0 flex items-center space-x-1 shadow-lg shadow-red-600/30"
                 >
                   <span>Subscribe</span>
-                  <Send className="w-3.5 h-3.5 text-cyan-300" />
+                  <Send className="w-3.5 h-3.5 text-rose-200" />
                 </button>
               </form>
             )}
@@ -70,7 +70,7 @@ export const Footer: React.FC = () => {
           {/* Col 1 Brand */}
           <div className="col-span-2 space-y-4">
             <a href="#" className="flex items-center space-x-3">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#0057FF] to-[#00FFFF] flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-red-600 via-rose-600 to-amber-600 flex items-center justify-center">
                 <Globe2 className="w-4 h-4 text-white" />
               </div>
               <span className="text-lg font-extrabold tracking-tight text-white italic">NEXUS GLOBAL</span>

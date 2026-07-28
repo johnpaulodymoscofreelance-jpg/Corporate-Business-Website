@@ -63,13 +63,13 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="flex items-center justify-between">
           {/* Animated 3D Logo */}
           <a href="#" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-[#0057FF] to-[#00FFFF] rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/25 group-hover:scale-105 transition-all">
+            <div className="w-10 h-10 bg-gradient-to-br from-red-600 via-rose-600 to-amber-600 rounded-xl flex items-center justify-center shadow-lg shadow-red-600/30 group-hover:scale-105 transition-all">
               <Globe2 className="w-5 h-5 text-white group-hover:rotate-12 transition-transform duration-500" />
             </div>
             <div className="flex flex-col">
               <span className="text-xl font-extrabold tracking-tight text-white flex items-center space-x-1 italic">
                 <span>NEXUS</span>
-                <span className="text-blue-400 font-light">GLOBAL</span>
+                <span className="text-red-500 font-light">GLOBAL</span>
               </span>
               <span className="text-[9px] font-mono tracking-widest text-slate-400 uppercase -mt-1">
                 Enterprise Platform
@@ -83,7 +83,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <a
                 key={link.name}
                 href={link.href}
-                className="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-blue-400 px-3.5 py-1.5 rounded-full hover:bg-white/5 transition-all"
+                className="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-red-400 px-3.5 py-1.5 rounded-full hover:bg-white/5 transition-all"
               >
                 {link.name}
               </a>
@@ -95,7 +95,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Theme Toggle */}
             <button
               onClick={onToggleTheme}
-              className="p-2.5 rounded-full glass-panel text-slate-300 hover:text-cyan-300 hover:border-blue-400/40 transition-all"
+              className="p-2.5 rounded-full glass-panel text-slate-300 hover:text-red-400 hover:border-red-500/40 transition-all"
               title="Toggle Theme"
             >
               {isDarkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-300" />}
@@ -104,9 +104,9 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* AI Assistant Button */}
             <button
               onClick={onOpenAiChat}
-              className="flex items-center space-x-2 px-4 py-2.5 rounded-full glass-panel text-xs font-semibold text-purple-200 hover:text-white hover:border-purple-400/50 transition-all group shadow-sm"
+              className="flex items-center space-x-2 px-4 py-2.5 rounded-full glass-panel text-xs font-semibold text-rose-200 hover:text-white hover:border-red-500/50 transition-all group shadow-sm"
             >
-              <Sparkles className="w-3.5 h-3.5 text-purple-400 group-hover:rotate-12 transition-transform" />
+              <Sparkles className="w-3.5 h-3.5 text-red-400 group-hover:rotate-12 transition-transform" />
               <span>NEXUS AI</span>
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             </button>
@@ -114,10 +114,10 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Schedule Demo CTA */}
             <button
               onClick={onOpenDemo}
-              className="px-6 py-2.5 rounded-full bg-[#0057FF] hover:bg-blue-500 text-sm font-semibold text-white shadow-lg shadow-blue-600/30 transition-all flex items-center space-x-2"
+              className="px-6 py-2.5 rounded-full bg-red-600 hover:bg-red-500 text-sm font-semibold text-white shadow-lg shadow-red-600/35 transition-all flex items-center space-x-2"
             >
               <span>Consult Experts</span>
-              <ArrowRight className="w-4 h-4 text-cyan-300 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 text-rose-200 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 

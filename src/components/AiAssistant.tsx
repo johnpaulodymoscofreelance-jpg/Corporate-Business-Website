@@ -116,8 +116,8 @@ export const AiAssistant: React.FC<AiAssistantProps> = ({ isOpen, onClose, onOpe
               <div
                 className={`max-w-[85%] p-4 rounded-2xl text-xs leading-relaxed ${
                   m.sender === 'user'
-                    ? 'bg-blue-600 text-white rounded-br-none'
-                    : 'bg-slate-950 border border-purple-500/30 text-slate-200 rounded-bl-none shadow-lg'
+                    ? 'bg-red-600 text-white rounded-br-none'
+                    : 'bg-slate-950 border border-red-500/30 text-slate-200 rounded-bl-none shadow-lg'
                 }`}
               >
                 {m.text}
@@ -125,14 +125,14 @@ export const AiAssistant: React.FC<AiAssistantProps> = ({ isOpen, onClose, onOpe
 
               <div className="flex items-center space-x-2 text-[10px] text-slate-500 font-mono px-1">
                 <span>{m.timestamp}</span>
-                {m.source && <span className="text-purple-400">• {m.source}</span>}
+                {m.source && <span className="text-rose-400">• {m.source}</span>}
               </div>
             </div>
           ))}
 
           {isLoading && (
-            <div className="flex items-center space-x-2 text-xs text-purple-300 font-mono bg-slate-950 p-3 rounded-xl border border-purple-500/20 w-fit animate-pulse">
-              <RefreshCw className="w-3.5 h-3.5 animate-spin text-purple-400" />
+            <div className="flex items-center space-x-2 text-xs text-rose-300 font-mono bg-slate-950 p-3 rounded-xl border border-red-500/20 w-fit animate-pulse">
+              <RefreshCw className="w-3.5 h-3.5 animate-spin text-red-400" />
               <span>Synthesizing Enterprise Intelligence Response...</span>
             </div>
           )}
@@ -184,7 +184,7 @@ export const AiAssistant: React.FC<AiAssistantProps> = ({ isOpen, onClose, onOpe
               <ShieldCheck className="w-3 h-3 text-emerald-400" />
               <span>SOC2 Type II Protected Session</span>
             </span>
-            <button onClick={() => { onClose(); onOpenDemo(); }} className="text-cyan-400 hover:underline">
+            <button onClick={() => { onClose(); onOpenDemo(); }} className="text-red-400 hover:underline">
               Schedule Exec Demo →
             </button>
           </div>

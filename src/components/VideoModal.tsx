@@ -11,7 +11,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="bg-slate-900 border border-blue-500/40 rounded-3xl max-w-4xl w-full p-6 sm:p-8 relative text-white shadow-2xl space-y-4">
+      <div className="bg-slate-900 border border-red-500/40 rounded-3xl max-w-4xl w-full p-6 sm:p-8 relative text-white shadow-2xl space-y-4">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 z-10 p-2 rounded-xl bg-slate-800 text-slate-400 hover:text-white transition-colors"
@@ -19,7 +19,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose }) => {
           <X className="w-5 h-5" />
         </button>
 
-        <div className="flex items-center space-x-2 text-xs text-cyan-400 font-mono">
+        <div className="flex items-center space-x-2 text-xs text-red-400 font-mono">
           <Sparkles className="w-4 h-4" />
           <span>ANNUAL EXECUTIVE SUMMIT KEYNOTE (2026)</span>
         </div>
@@ -38,7 +38,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose }) => {
           />
 
           <div className="relative z-10 text-center space-y-4 p-6">
-            <div className="w-16 h-16 rounded-full bg-blue-600/90 border-2 border-cyan-400 flex items-center justify-center text-white mx-auto shadow-2xl shadow-blue-500/50 hover:scale-110 transition-transform cursor-pointer">
+            <div className="w-16 h-16 rounded-full bg-red-600/90 border-2 border-rose-400 flex items-center justify-center text-white mx-auto shadow-2xl shadow-red-500/50 hover:scale-110 transition-transform cursor-pointer">
               <Play className="w-8 h-8 fill-current ml-1" />
             </div>
 

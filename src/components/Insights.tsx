@@ -28,16 +28,16 @@ export const Insights: React.FC = () => {
   };
 
   return (
-    <section id="insights" className="py-24 bg-slate-950 relative overflow-hidden">
+    <section id="insights" className="py-24 bg-[#08080a] relative overflow-hidden border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center space-x-2 bg-blue-950/80 border border-blue-500/30 px-3.5 py-1.5 rounded-full text-xs text-cyan-400 font-semibold uppercase tracking-wider">
+          <div className="inline-flex items-center space-x-2 bg-red-500/10 border border-red-500/20 px-3.5 py-1.5 rounded-full text-xs text-red-400 font-semibold uppercase tracking-wider">
             <BookOpen className="w-3.5 h-3.5" />
             <span>Research & Whitepapers</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-            NEXUS Executive <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Thought Leadership</span>
+            NEXUS Executive <span className="gradient-text">Thought Leadership</span>
           </h2>
 
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
@@ -50,20 +50,20 @@ export const Insights: React.FC = () => {
           {ARTICLES_DATA.map((art) => (
             <div
               key={art.id}
-              className="bg-slate-900/80 border border-blue-900/40 rounded-3xl p-6 backdrop-blur-xl hover:border-blue-500/60 transition-all flex flex-col justify-between shadow-2xl group"
+              className="bg-slate-900/80 border border-red-900/40 rounded-3xl p-6 backdrop-blur-xl hover:border-red-500/60 transition-all flex flex-col justify-between shadow-2xl group"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between text-xs text-slate-400">
-                  <span className="px-2.5 py-1 rounded-md bg-blue-950 text-cyan-300 font-mono text-[10px] uppercase border border-blue-800">
+                  <span className="px-2.5 py-1 rounded-md bg-red-950 text-rose-300 font-mono text-[10px] uppercase border border-red-800">
                     {art.type}
                   </span>
                   <span className="flex items-center space-x-1 font-mono text-[11px]">
-                    <Clock className="w-3 h-3 text-cyan-400" />
+                    <Clock className="w-3 h-3 text-red-400" />
                     <span>{art.readTime}</span>
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">
+                <h3 className="text-lg font-bold text-white group-hover:text-rose-300 transition-colors">
                   {art.title}
                 </h3>
 
@@ -78,7 +78,7 @@ export const Insights: React.FC = () => {
                 {art.downloadable ? (
                   <button
                     onClick={() => setDownloadArticle(art)}
-                    className="flex items-center space-x-1.5 text-xs font-bold text-cyan-400 hover:text-cyan-300 bg-blue-950/60 px-3 py-1.5 rounded-lg border border-blue-800/60 transition-colors"
+                    className="flex items-center space-x-1.5 text-xs font-bold text-red-400 hover:text-red-300 bg-red-950/60 px-3 py-1.5 rounded-lg border border-red-800/60 transition-colors"
                   >
                     <Download className="w-3.5 h-3.5" />
                     <span>PDF Download</span>
@@ -98,7 +98,7 @@ export const Insights: React.FC = () => {
       {/* PDF Download Modal */}
       {downloadArticle && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md animate-in fade-in duration-200">
-          <div className="bg-slate-900 border border-blue-500/40 rounded-3xl max-w-md w-full p-6 sm:p-8 relative text-white shadow-2xl space-y-4">
+          <div className="bg-slate-900 border border-red-500/40 rounded-3xl max-w-md w-full p-6 sm:p-8 relative text-white shadow-2xl space-y-4">
             <button
               onClick={() => setDownloadArticle(null)}
               className="absolute top-4 right-4 p-2 rounded-xl bg-slate-800 text-slate-400 hover:text-white transition-colors"
@@ -106,7 +106,7 @@ export const Insights: React.FC = () => {
               <X className="w-5 h-5" />
             </button>
 
-            <div className="w-12 h-12 rounded-2xl bg-blue-600/20 border border-blue-500/40 flex items-center justify-center text-cyan-400">
+            <div className="w-12 h-12 rounded-2xl bg-red-600/20 border border-red-500/40 flex items-center justify-center text-red-400">
               <FileText className="w-6 h-6" />
             </div>
 
@@ -129,13 +129,13 @@ export const Insights: React.FC = () => {
                     placeholder="exec@company.com"
                     value={emailInput}
                     onChange={(e) => setEmailInput(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white focus:outline-none focus:border-blue-500"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white focus:outline-none focus:border-red-500"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-lg shadow-blue-600/30 flex items-center justify-center space-x-2"
+                  className="w-full py-3.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs shadow-lg shadow-red-600/30 flex items-center justify-center space-x-2"
                 >
                   <Download className="w-4 h-4" />
                   <span>Send PDF Whitepaper Now</span>

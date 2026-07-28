@@ -1,0 +1,6 @@
+{
+  "name": "NEXUS Global Enterprise",
+  "description": "Next-Generation Interactive 3D Corporate Platform with AI-powered Insights & Enterprise Solutions",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

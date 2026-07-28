@@ -1,0 +1,62 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #071A35;
+    color: #f8fafc;
+  }
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-panel-hover:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(0, 87, 255, 0.4);
+  box-shadow: 0 12px 40px 0 rgba(0, 87, 255, 0.25);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #ffffff, #0057FF 60%, #00FFFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.25);
+}
+
+.glow-blue {
+  box-shadow: 0 0 30px rgba(0, 87, 255, 0.35);
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.orb-blue {
+  width: 500px;
+  height: 500px;
+  background: rgba(0, 87, 255, 0.18);
+}
+
+.orb-purple {
+  width: 400px;
+  height: 400px;
+  background: rgba(128, 0, 255, 0.12);
+}
+

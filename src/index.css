@@ -54,9 +54,32 @@
   background: rgba(0, 87, 255, 0.18);
 }
 
-.orb-purple {
-  width: 400px;
-  height: 400px;
-  background: rgba(128, 0, 255, 0.12);
+/* Custom scrollbar hiding and marquee animations */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
 

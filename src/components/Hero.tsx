@@ -170,22 +170,24 @@ export const Hero: React.FC<HeroProps> = ({
       </div>
 
       {/* Partners Marquee Footer Ticker */}
-      <div className="relative z-10 mt-12 border-t border-b border-slate-900 bg-slate-950/80 py-5 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="text-xs font-mono text-slate-400 uppercase tracking-widest whitespace-nowrap">
+      <div className="relative z-10 mt-12 border-t border-b border-white/10 bg-[#071A35]/80 py-5 backdrop-blur-md overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden">
+          <div className="text-xs font-mono text-slate-400 uppercase tracking-widest whitespace-nowrap shrink-0">
             Trusted by Global Enterprise Leaders:
           </div>
 
-          <div className="flex items-center space-x-8 overflow-x-auto no-scrollbar py-1 w-full md:w-auto">
-            {PARTNER_LOGOS.map((partner) => (
-              <div
-                key={partner.name}
-                className="flex items-center space-x-2 text-slate-400 hover:text-cyan-400 transition-colors whitespace-nowrap group cursor-default"
-              >
-                <span className="font-bold text-sm tracking-wider">{partner.name}</span>
-                <span className="text-[10px] text-slate-600 group-hover:text-cyan-500 font-mono">({partner.symbol})</span>
-              </div>
-            ))}
+          <div className="w-full overflow-hidden no-scrollbar">
+            <div className="animate-marquee flex items-center space-x-12">
+              {[...PARTNER_LOGOS, ...PARTNER_LOGOS, ...PARTNER_LOGOS].map((partner, idx) => (
+                <div
+                  key={`${partner.name}-${idx}`}
+                  className="flex items-center space-x-2 text-slate-300 hover:text-cyan-400 transition-colors whitespace-nowrap group cursor-default shrink-0"
+                >
+                  <span className="font-bold text-sm tracking-wider">{partner.name}</span>
+                  <span className="text-[10px] text-slate-500 group-hover:text-cyan-400 font-mono">({partner.symbol})</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
